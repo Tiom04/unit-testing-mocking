@@ -44,13 +44,11 @@ public class InMemPaymentRepository implements PaymentRepository {
         if (isNull(payment)) {
             throw new IllegalArgumentException("Payment must not be null");
         }
-
         if (nonNull(payment.getPaymentId()) && findById(payment.getPaymentId()).isPresent()) {
             throw new IllegalArgumentException("Payment with id " + payment.getPaymentId() + "already saved");
         }
 
         paymentMap.put(payment.getPaymentId(), Payment.copyOf(payment));
-
         return payment;
     }
 
@@ -60,7 +58,6 @@ public class InMemPaymentRepository implements PaymentRepository {
         if (isNull(payment)) {
             throw new NoSuchElementException("Payment with id " + paymentId + " not found");
         }
-
         payment.setMessage(message);
         return Payment.copyOf(payment);
     }

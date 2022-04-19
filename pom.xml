@@ -17,10 +17,9 @@
         <java.version>1.8</java.version>
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
-
-        <assertj.version>3.9.1</assertj.version>
-        <junit-jupiter.version>5.6.2</junit-jupiter.version>
-        <mockito.version>3.4.2</mockito.version>
+        <assertj.version>3.22.0</assertj.version>
+        <junit-jupiter.version>5.8.2</junit-jupiter.version>
+        <mockito.version>4.4.0</mockito.version>
     </properties>
 
     <dependencies>
@@ -31,11 +30,17 @@
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
             <version>${junit-jupiter.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.vintage</groupId>
+            <artifactId>junit-vintage-engine</artifactId>
+            <version>5.7.0</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
@@ -53,6 +58,12 @@
             <groupId>org.mockito</groupId>
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
